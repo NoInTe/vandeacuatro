@@ -1,0 +1,1433 @@
+/* =========================================================
+   VAN DE A 4
+   STYLES.CSS
+========================================================= */
+
+
+/* =========================================================
+   1. RESET GENERAL
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f3ee;
+  color: #292929;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+select {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   2. HEADER
+========================================================= */
+
+.site-header {
+  width: 100%;
+
+  padding: 20px 5%;
+
+  background-image:
+    linear-gradient(
+      rgba(138, 138, 138, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url("../img/fondo-header.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: white;
+}
+
+
+/* LOGO */
+
+.logo-container {
+  width: 180px;
+  margin-bottom: 15px;
+}
+
+.logo-container img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* TÍTULO */
+
+.site-title h1 {
+  font-size: 42px;
+  line-height: 1.15;
+  letter-spacing: 2px;
+}
+
+.site-title p {
+  color: #fcfcfc;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+
+/* =========================================================
+   3. NAV
+========================================================= */
+
+.main-menu {
+  width: 100%;
+
+  background: #292929;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: stretch;
+
+  flex-wrap: wrap;
+}
+
+
+/*
+ * Los enlaces están directamente dentro
+ * de .main-menu según el HTML actual.
+ */
+
+.main-menu > a {
+  color: white;
+
+  padding: 17px 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  transition:
+    background 0.3s ease;
+
+  min-height: 64px;
+}
+
+.main-menu > a:hover {
+  background: #444;
+}
+
+
+/*
+ * Elementos principales del menú
+ */
+
+.main-menu strong {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+
+/*
+ * Subtítulos
+ */
+
+.main-menu span {
+  font-size: 11px;
+  opacity: 0.65;
+  line-height: 1.2;
+  margin-top: 3px;
+}
+
+
+/* =========================================================
+   4. CONTENEDOR PRINCIPAL
+========================================================= */
+
+#contenido {
+  width: 100%;
+}
+
+
+/* =========================================================
+   5. SECCIONES PRINCIPALES
+========================================================= */
+
+/*
+ * Todas las secciones están físicamente
+ * dentro de index.html.
+
+ * JavaScript controla cuál está activa.
+ */
+
+.page-section {
+  display: none;
+
+  width: 100%;
+
+  min-height: 600px;
+
+  background: #f5f3ee;
+}
+
+
+/*
+ * SECCIÓN ACTIVA
+ */
+
+.page-section.active {
+  display: block;
+}
+
+
+/*
+ * Evitamos que las secciones internas
+ * hereden accidentalmente estilos generales.
+ */
+
+
+/* =========================================================
+   6. INICIO
+========================================================= */
+
+#section-inicio {
+  width: 100%;
+  padding-top: 30px;
+}
+
+
+/* =========================================================
+   7. MAPA
+========================================================= */
+
+#map {
+  width: auto;
+
+  max-width: 1500px;
+
+  height: 50vh; /* 650px; */
+
+  margin: 0 5%;
+
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.15);
+
+  background: #e9e5dc;
+
+  z-index: 1;
+}
+
+
+/*
+ * Evitamos que el mapa quede pegado
+ * a los bordes visualmente.
+ */
+
+#section-inicio > #map {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   8. INDICACIÓN DE ZOOM DEL MAPA
+========================================================= */
+
+.map-zoom-hint {
+  position: absolute;
+
+  left: 50%;
+  bottom: 20px;
+
+  transform:
+    translateX(-50%);
+
+  z-index: 1000;
+
+  background:
+    rgba(255, 255, 255, 0.94);
+
+  padding:
+    12px 20px;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(0, 0, 0, 0.18);
+
+  text-align: center;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.25s ease;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+  font-size: 13px;
+
+  color: #333;
+
+  white-space: nowrap;
+}
+
+
+/*
+ * IMPORTANTE:
+ *
+ * El HTML actual utiliza #map,
+ * no .map.
+ */
+
+#map:hover .map-zoom-hint {
+  opacity: 1;
+}
+
+
+/*
+ * Texto principal
+ */
+
+.map-zoom-hint strong {
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+
+/*
+ * Segunda línea
+ */
+
+.map-zoom-hint span {
+  color: #666;
+  line-height: 1.3;
+}
+
+
+/*
+ * Ctrl destacado
+ */
+
+.map-zoom-hint b {
+  background: #292929;
+
+  color: white;
+
+  padding:
+    2px 6px;
+
+  border-radius: 4px;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   9. LEAFLET
+========================================================= */
+
+/*
+ * Nos aseguramos de que los controles
+ * de Leaflet permanezcan por encima
+ * del contenido del mapa.
+ */
+
+.leaflet-control-container {
+  z-index: 1000;
+}
+
+
+/* =========================================================
+   10. MARKER PERSONALIZADO
+========================================================= */
+
+.custom-marker {
+  width: 28px;
+  height: 28px;
+
+  border-radius:
+    50% 50% 50% 0;
+
+  background: #c75c38;
+
+  transform:
+    rotate(-45deg);
+
+  border:
+    3px solid white;
+
+  box-shadow:
+    0 3px 10px
+    rgba(0, 0, 0, 0.3);
+
+  position: relative;
+}
+
+
+.custom-marker::after {
+  content: "";
+
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  background: white;
+
+  border-radius: 50%;
+
+  top: 7px;
+  left: 7px;
+}
+
+
+/* =========================================================
+   11. POPUP DEL MAPA
+========================================================= */
+
+.leaflet-popup-content-wrapper {
+  padding: 0;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+
+
+.leaflet-popup-content {
+  margin: 0;
+
+  width: 250px !important;
+}
+
+
+.map-popup-card {
+  width: 250px;
+
+  background: white;
+}
+
+
+.map-popup-content {
+  padding: 18px;
+}
+
+
+.map-popup-content h3 {
+  margin-bottom: 5px;
+
+  font-size: 20px;
+
+  line-height: 1.25;
+}
+
+
+.map-popup-content p {
+  color: #777;
+
+  font-size: 13px;
+
+  margin-bottom: 12px;
+}
+
+
+.map-popup-button {
+  display: inline-block;
+
+  padding:
+    8px 14px;
+
+  background: #292929;
+
+  color: white;
+
+  border-radius: 5px;
+
+  font-size: 13px;
+
+  transition:
+    background 0.25s ease;
+}
+
+
+.map-popup-button:hover {
+  background: #444;
+}
+
+
+/* =========================================================
+   12. ÚLTIMOS ARTÍCULOS - INDEX
+========================================================= */
+
+.latest-articles {
+  width: 100%;
+
+  padding:
+    70px 5%;
+
+  background: #f5f3ee;
+}
+
+
+/*
+ * Título de sección
+ */
+
+.latest-articles > h2 {
+  max-width: 900px;
+
+  margin:
+    0 auto 35px;
+
+  text-align: center;
+
+  font-size: 34px;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   13. ENCABEZADOS GENERALES
+========================================================= */
+
+.section-heading {
+  max-width: 900px;
+
+  margin:
+    0 auto 35px;
+
+  text-align: center;
+}
+
+
+.section-heading h2 {
+  font-size: 34px;
+
+  line-height: 1.2;
+
+  margin-bottom: 10px;
+}
+
+
+.section-heading p {
+  color: #777;
+}
+
+
+/* =========================================================
+   14. GRILLA DE ARTÍCULOS
+========================================================= */
+
+.articles-grid {
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   15. TARJETA DE ARTÍCULO
+========================================================= */
+
+.article-card {
+  background: white;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 5px 20px
+    rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.article-card:hover {
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 10px 25px
+    rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   16. IMAGEN DE ARTÍCULO
+========================================================= */
+
+.article-image {
+  width: 100%;
+
+  height: 230px;
+
+  overflow: hidden;
+
+  background: #ddd;
+}
+
+
+.article-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+.article-card:hover
+.article-image img {
+  transform:
+    scale(1.04);
+}
+
+
+/* =========================================================
+   17. CONTENIDO DE TARJETA
+========================================================= */
+
+.article-content {
+  padding: 25px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+}
+
+
+.article-category {
+  color: #c75c38;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+.article-content h3 {
+  font-size: 22px;
+
+  line-height: 1.25;
+
+  margin:
+    8px 0 12px;
+}
+
+
+.article-content p {
+  color: #666;
+
+  margin-bottom: 20px;
+}
+
+
+.article-meta {
+  margin-bottom: 15px;
+
+  color: #888;
+
+  font-size: 13px;
+}
+
+
+/*
+ * El botón queda al final de la tarjeta
+ * aunque las descripciones tengan
+ * diferente longitud.
+ */
+
+.article-button {
+  display: inline-block;
+
+  align-self: flex-start;
+
+  margin-top: auto;
+
+  padding:
+    10px 18px;
+
+  background: #292929;
+
+  color: white;
+
+  border-radius: 5px;
+
+  transition:
+    background 0.25s ease;
+}
+
+
+.article-button:hover {
+  background: #444;
+}
+
+
+/* =========================================================
+   18. BOTÓN "VER TODOS"
+========================================================= */
+
+.latest-articles-more {
+  text-align: center;
+
+  margin-top: 40px;
+}
+
+
+.latest-articles-more a {
+  display: inline-block;
+
+  padding:
+    12px 22px;
+
+  background: #292929;
+
+  color: white;
+
+  border-radius: 6px;
+
+  transition:
+    background 0.25s ease;
+}
+
+
+.latest-articles-more a:hover {
+  background: #444;
+}
+
+
+/* =========================================================
+   19. PÁGINA / SECCIÓN DE TODOS LOS ARTÍCULOS
+========================================================= */
+
+#section-articulos {
+  padding:
+    70px 5%;
+}
+
+
+#section-articulos > h2 {
+  max-width: 900px;
+
+  margin:
+    0 auto 35px;
+
+  text-align: center;
+
+  font-size: 34px;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   20. FILTROS
+========================================================= */
+
+.articles-filters {
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin:
+    0 auto 45px;
+
+  padding: 10px;
+
+  background: white;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 5px 20px
+    rgba(0, 0, 0, 0.08);
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+
+.filter-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  flex: 1;
+
+  min-width: 180px;
+}
+
+
+.filter-group label {
+  font-size: 13px;
+
+  font-weight: bold;
+
+  color: #555;
+}
+
+
+.filter-group select {
+  width: 100%;
+
+  padding:
+    11px 14px;
+
+  border:
+    1px solid #ddd;
+
+  border-radius: 6px;
+
+  background: white;
+
+  color: #333;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+
+.filter-group select:focus {
+  outline: none;
+
+  border-color:
+    #c75c38;
+
+  box-shadow:
+    0 0 0 2px
+    rgba(199, 92, 56, 0.12);
+}
+
+
+/* =========================================================
+   21. BOTÓN LIMPIAR FILTROS
+========================================================= */
+
+#clear-filters {
+  padding:
+    11px 18px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: #292929;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease;
+
+  min-height: 42px;
+}
+
+
+#clear-filters:hover {
+  background: #444;
+}
+
+
+/* =========================================================
+   22. CARGA PROGRESIVA DE ARTÍCULOS
+========================================================= */
+
+.articles-loading {
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin:
+    30px auto 70px;
+
+  padding: 20px;
+
+  text-align: center;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   23. MENSAJE DE ERROR
+========================================================= */
+
+.articles-error {
+  width: 100%;
+
+  max-width: 800px;
+
+  margin:
+    50px auto;
+
+  padding: 40px;
+
+  background: white;
+
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+
+.articles-error h3 {
+  margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   24. OTRAS PÁGINAS INTERNAS
+========================================================= */
+
+#section-quienes-somos,
+#section-afiliados,
+#section-redes,
+#section-contacto {
+  padding:
+    70px 5%;
+}
+
+
+#section-quienes-somos > h2,
+#section-afiliados > h2,
+#section-redes > h2,
+#section-contacto > h2 {
+  max-width: 900px;
+
+  margin:
+    0 auto 20px;
+
+  text-align: center;
+
+  font-size: 34px;
+}
+
+
+#section-quienes-somos > p,
+#section-afiliados > p,
+#section-redes > p,
+#section-contacto > p {
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  color: #666;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   25. PÁGINA DE ARTÍCULO INDIVIDUAL
+========================================================= */
+
+.article-page {
+  width: 100%;
+
+  max-width: 1100px;
+
+  margin:
+    50px auto;
+
+  padding: 60px;
+
+  background: white;
+}
+
+
+.article-header {
+  text-align: center;
+
+  margin-bottom: 40px;
+}
+
+
+.article-header h1 {
+  font-size: 42px;
+
+  line-height: 1.2;
+
+  margin:
+    10px 0 15px;
+}
+
+
+.article-date {
+  color: #777;
+
+  font-size: 14px;
+}
+
+
+.article-cover {
+  width: 100%;
+
+  max-height: 600px;
+
+  object-fit: cover;
+
+  margin-bottom: 40px;
+}
+
+
+.article-body {
+  max-width: 800px;
+
+  margin: auto;
+}
+
+
+.article-body p {
+  font-size: 18px;
+
+  margin-bottom: 25px;
+}
+
+
+.article-body img {
+  width: 100%;
+
+  margin:
+    35px 0;
+
+  border-radius: 8px;
+}
+
+
+/* =========================================================
+   26. FOOTER
+========================================================= */
+
+.site-footer {
+  background: #292929;
+
+  color: white;
+
+  padding:
+    50px 5% 20px;
+}
+
+
+.footer-content {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 40px;
+}
+
+
+.footer-content h3 {
+  margin-bottom: 10px;
+}
+
+
+.footer-content p,
+.footer-content a {
+  color: #bbb;
+}
+
+
+.footer-content a {
+  display: block;
+
+  margin-bottom: 5px;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+.footer-content a:hover {
+  color: white;
+}
+
+
+.copyright {
+  max-width: 1200px;
+
+  margin:
+    40px auto 0;
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid #444;
+
+  text-align: center;
+
+  color: #999;
+}
+
+
+/* =========================================================
+   27. RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .main-menu > a {
+    padding:
+      15px 16px;
+  }
+
+
+  .articles-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .article-image {
+    height: 210px;
+  }
+
+
+  .footer-content {
+    gap: 25px;
+  }
+
+}
+
+
+/* =========================================================
+   28. RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  /* -------------------------------------
+     HEADER
+  ------------------------------------- */
+
+  .site-header {
+    padding:
+      20px 5%;
+  }
+
+
+  .logo-container {
+    width: 140px;
+
+    margin-bottom: 12px;
+  }
+
+
+  .site-title h1 {
+    font-size: 32px;
+  }
+
+
+  .site-title p {
+    font-size: 14px;
+  }
+
+
+
+  /* -------------------------------------
+     MENU
+  ------------------------------------- */
+
+  /*
+   * IMPORTANTE:
+   * No usamos .main-menu ul porque
+   * el HTML actual no tiene <ul>.
+   */
+
+  .main-menu {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .main-menu > a {
+    width: 100%;
+
+    min-height: auto;
+
+    padding:
+      12px 15px;
+
+    border-bottom:
+      1px solid #444;
+  }
+
+
+  .main-menu > a:last-child {
+    border-bottom: none;
+  }
+
+
+  .main-menu strong {
+    font-size: 14px;
+  }
+
+
+  .main-menu span {
+    font-size: 11px;
+  }
+
+
+
+  /* -------------------------------------
+     MAPA
+  ------------------------------------- */
+
+  #map {
+    height: 500px;
+
+    border-radius: 0;
+  }
+
+
+  /*
+   * En pantallas pequeñas la leyenda
+   * puede ocupar demasiado espacio.
+   */
+
+  .map-zoom-hint {
+    max-width:
+      calc(100% - 30px);
+
+    white-space: normal;
+
+    width: max-content;
+
+    bottom: 15px;
+
+    padding:
+      10px 15px;
+  }
+
+
+
+  /* -------------------------------------
+     SECCIONES
+  ------------------------------------- */
+
+  .latest-articles,
+  #section-articulos,
+  #section-quienes-somos,
+  #section-afiliados,
+  #section-redes,
+  #section-contacto {
+    padding:
+      50px 5%;
+  }
+
+
+  .latest-articles > h2,
+  #section-articulos > h2,
+  #section-quienes-somos > h2,
+  #section-afiliados > h2,
+  #section-redes > h2,
+  #section-contacto > h2 {
+    font-size: 28px;
+  }
+
+
+
+  /* -------------------------------------
+     ARTÍCULOS
+  ------------------------------------- */
+
+  .articles-grid {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+
+  .article-image {
+    height: 230px;
+  }
+
+
+  .article-content {
+    padding: 20px;
+  }
+
+
+  .article-content h3 {
+    font-size: 20px;
+  }
+
+
+
+  /* -------------------------------------
+     FILTROS
+  ------------------------------------- */
+
+  .articles-filters {
+    align-items: stretch;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 20px;
+  }
+
+
+  .filter-group {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+
+  #clear-filters {
+    width: 100%;
+  }
+
+
+
+  /* -------------------------------------
+     ARTÍCULO INDIVIDUAL
+  ------------------------------------- */
+
+  .article-page {
+    margin:
+      20px 0;
+
+    padding:
+      30px 20px;
+  }
+
+
+  .article-header h1 {
+    font-size: 32px;
+  }
+
+
+
+  /* -------------------------------------
+     FOOTER
+  ------------------------------------- */
+
+  .footer-content {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+  }
+
+}
+
+
+/* =========================================================
+   29. MOBILE MUY PEQUEÑO
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .site-title h1 {
+    font-size: 28px;
+  }
+
+
+  #map {
+    height: 450px;
+  }
+
+
+  .article-image {
+    height: 200px;
+  }
+
+
+  .map-zoom-hint {
+    font-size: 12px;
+  }
+
+}

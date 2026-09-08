@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Van de a 4 - Viajes, lugares y experiencias."
+    />
+
+    <title>Van de a 4</title>
+
+    <link rel="icon" type="image/jpg" sizes="32x32" href="/img/favicon.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="logo-container">
+        <a href="#inicio" data-page="inicio">
+          <img src="img/logo.jpg" alt="Van de a 4" />
+        </a>
+      </div>
+
+      <div class="site-title">
+        <h1>VAN DE A 4</h1>
+
+        <p>De Argentina a Alaska en van experiencias para compartir</p>
+      </div>
+    </header>
+
+    <nav class="main-menu">
+      <a href="#inicio" data-section="inicio"> Inicio </a>
+
+      <a href="#quienes-somos" data-section="quienes-somos">
+        <strong> Nuestra historia </strong>
+      </a>
+
+      <a href="#afiliados" data-section="afiliados">
+        <strong> Links de afiliados </strong>
+      </a>
+
+      <a href="#articulos" data-section="articulos">
+        <strong> Artículos </strong>
+      </a>
+
+      <a href="#redes" data-section="redes">
+        <strong> Nuestras redes </strong>
+      </a>
+
+      <a href="#contacto" data-section="contacto">
+        <strong> Contacto </strong>
+      </a>
+    </nav>
+
+    <!-- =====================================
+         CONTENIDO DINÁMICO
+    ====================================== -->
+
+    <main id="contenido">
+      <!-- ==========================
+             INICIO
+        =========================== -->
+
+      <section id="section-inicio" class="page-section active">
+        <!-- mapa -->
+
+        <div id="map"></div>
+
+        <!-- últimos artículos -->
+
+        <section class="latest-articles">
+          <h2>Últimos artículos</h2>
+
+          <div id="latest-articles" class="articles-grid"></div>
+        </section>
+      </section>
+
+      <!-- ==========================
+             QUIÉNES SOMOS
+        =========================== -->
+
+      <section id="section-quienes-somos" class="page-section">
+        <h2>Quiénes somos</h2>
+
+        <p>Contenido de nuestra historia...</p>
+      </section>
+
+      <!-- ==========================
+             AFILIADOS
+        =========================== -->
+
+      <section id="section-afiliados" class="page-section">
+        <h2>Regalitos o descuentos</h2>
+
+        <p>Contenido de afiliados...</p>
+      </section>
+
+      <!-- ==========================
+             ARTÍCULOS
+        =========================== -->
+
+      <section id="section-articulos" class="page-section">
+        <h2>Todos nuestros artículos</h2>
+
+        <!-- FILTROS -->
+
+        <div class="articles-filters">
+          <div class="filter-group">
+            <label for="filter-city"> Ciudad </label>
+
+            <select id="filter-city">
+              <option value="">Todas</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filter-year"> Año </label>
+
+            <select id="filter-year">
+              <option value="">Todos</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filter-month"> Mes </label>
+
+            <select id="filter-month">
+              <option value="">Todos</option>
+
+              <option value="1">Enero</option>
+
+              <option value="2">Febrero</option>
+
+              <option value="3">Marzo</option>
+
+              <option value="4">Abril</option>
+
+              <option value="5">Mayo</option>
+
+              <option value="6">Junio</option>
+
+              <option value="7">Julio</option>
+
+              <option value="8">Agosto</option>
+
+              <option value="9">Septiembre</option>
+
+              <option value="10">Octubre</option>
+
+              <option value="11">Noviembre</option>
+
+              <option value="12">Diciembre</option>
+            </select>
+          </div>
+
+          <button id="clear-filters" type="button">Limpiar filtros</button>
+        </div>
+
+        <!-- ARTÍCULOS -->
+
+        <div id="articles-results" class="articles-grid"></div>
+
+        <!-- INDICADOR DE SCROLL -->
+
+        <div id="articles-loading" class="articles-loading">
+          Cargando artículos...
+        </div>
+      </section>
+
+      <!-- ==========================
+             REDES
+        =========================== -->
+
+      <section id="section-redes" class="page-section">
+        <h2>Nuestras redes</h2>
+
+        <p>Encontranos en nuestras redes sociales.</p>
+      </section>
+
+      <!-- ==========================
+             CONTACTO
+        =========================== -->
+
+      <section id="section-contacto" class="page-section">
+        <h2>Hablamos con ustedes</h2>
+
+        <p>Contactate con nosotros.</p>
+      </section>
+    </main>
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div>
+          <h3>Van de a 4</h3>
+
+          <p>Viajes, experiencias y lugares para descubrir.</p>
+        </div>
+
+        <div>
+          <h3>Seguinos</h3>
+
+          <a href="#"> Instagram </a>
+
+          <a href="#"> Facebook </a>
+
+          <a href="#"> YouTube </a>
+        </div>
+
+        <div>
+          <h3>Contacto</h3>
+
+          <a href="#contacto" data-page="contacto"> Hablamos con ustedes </a>
+        </div>
+      </div>
+
+      <div class="copyright">© 2026 Van de a 4 | By NITworks.net</div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="js/mapa.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <script src="js/articulos.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+[
+    {
+        "id": "bariloche",
+        "nombre": "Bariloche",
+        "pais": "Argentina",
+        "provincia": "Río Negro",
+        "latitud": -41.1335,
+        "longitud": -71.3103,
+        "articulo": "articulos/2026/08/bariloche/index.html"
+    },
+
+    {
+        "id": "puerto-madryn",
+        "nombre": "Puerto Madryn",
+        "pais": "Argentina",
+        "provincia": "Chubut",
+        "latitud": -42.7692,
+        "longitud": -65.0385,
+        "articulo": "articulos/2026/08/puerto-madryn/index.html"
+    }
+]

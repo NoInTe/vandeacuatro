@@ -1,0 +1,54 @@
+[
+    {
+        "id": "bariloche",
+
+        "titulo": "Bariloche: entre lagos y montañas",
+
+        "descripcion": "Nuestra experiencia recorriendo Bariloche y sus alrededores.",
+
+        "imagen": "articulos/2026/08/bariloche/img/portada.jpg",
+
+        "articulo": "articulos/2026/08/bariloche/index.html",
+
+        "ciudad": "Bariloche",
+
+        "pais": "Argentina",
+
+        "provincia": "Río Negro",
+
+        "año": 2026,
+
+        "mes": 8,
+
+        "categoria": "Destinos",
+
+        "fecha": "2026-08-24"
+    },
+
+
+    {
+        "id": "puerto-madryn",
+
+        "titulo": "Puerto Madryn y la naturaleza",
+
+        "descripcion": "Una experiencia increíble junto al mar y la fauna.",
+
+        "imagen": "articulos/2026/08/puerto-madryn/img/portada.jpg",
+
+        "articulo": "articulos/2026/08/puerto-madryn/index.html",
+
+        "ciudad": "Puerto Madryn",
+
+        "pais": "Argentina",
+
+        "provincia": "Chubut",
+
+        "año": 2026,
+
+        "mes": 8,
+
+        "categoria": "Naturaleza",
+
+        "fecha": "2026-08-20"
+    }
+]
